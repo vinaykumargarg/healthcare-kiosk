@@ -1,0 +1,42 @@
+{
+  "name": "Lok Kalyan | लोक कल्याण",
+  "short_name": "Lok Kalyan",
+  "description": "Rural Healthcare Accessibility Platform — Telemedicine, Diagnostics & Community Wellness",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0B1120",
+  "theme_color": "#0EA5E9",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "hi",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["health", "medical", "lifestyle"],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Book Doctor",
+      "short_name": "Doctor",
+      "description": "Quickly request a tele-consultation",
+      "url": "/?action=book-doctor"
+    },
+    {
+      "name": "Emergency SOS",
+      "short_name": "SOS",
+      "description": "Call emergency ambulance",
+      "url": "/?action=sos"
+    }
+  ]
+}

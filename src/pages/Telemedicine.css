@@ -1,0 +1,135 @@
+.telemedicine-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  height: 100%;
+}
+
+.video-container {
+  display: flex;
+  gap: 24px;
+  flex: 1;
+  padding: 24px;
+  background: rgba(15, 23, 42, 0.3);
+}
+
+.main-video {
+  flex: 2;
+  background: #000;
+  border-radius: 16px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.video-placeholder {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  gap: 16px;
+}
+
+.video-icon {
+  opacity: 0.5;
+}
+
+.video-controls {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 16px;
+  padding: 12px 24px;
+  border-radius: 40px;
+  background: rgba(15, 23, 42, 0.8);
+}
+
+.control-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  color: white;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.control-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.control-btn.end-call {
+  background: var(--danger-color);
+}
+
+.control-btn.end-call:hover {
+  background: #dc2626;
+}
+
+.side-panel {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.patient-card, .notes-card {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.patient-card h3, .notes-card h3 {
+  font-size: 1.1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 12px;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.95rem;
+}
+
+.info-row .label {
+  color: var(--text-secondary);
+}
+
+.info-row .value {
+  font-weight: 500;
+}
+
+.info-row .value.warning {
+  color: var(--warning-color);
+}
+
+.notes-card {
+  flex: 1;
+}
+
+.notes-input {
+  flex: 1;
+  background: rgba(15, 23, 42, 0.4);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 12px;
+  color: var(--text-primary);
+  font-family: inherit;
+  resize: none;
+  min-height: 150px;
+}
+
+.notes-input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}

@@ -1,0 +1,293 @@
+/* ═══════════════════════════════════════════
+   Patient Dashboard — Premium Layout CSS
+   Phase 8: Mobile-first, PWA-ready
+═══════════════════════════════════════════ */
+
+/* Layout */
+.patient-dashboard-container {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  min-height: 100vh;
+  animation: fadeIn 0.5s ease-out;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.main-column, .side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ── Hero Banner ── */
+.hero-banner {
+  background: linear-gradient(135deg,
+    rgba(14, 165, 233, 0.18) 0%,
+    rgba(20, 184, 166, 0.12) 50%,
+    rgba(99, 102, 241, 0.08) 100%);
+  border: 1px solid rgba(14, 165, 233, 0.25);
+  padding: 36px 40px;
+  border-radius: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow:
+    0 10px 40px rgba(0, 0, 0, 0.25),
+    inset 0 1px 0 rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Decorative gradient orb */
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(14,165,233,0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.hero-banner h1 {
+  font-size: 2rem;
+  margin-bottom: 6px;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+.hero-banner p {
+  font-size: 1rem;
+  opacity: 0.85;
+  font-family: 'Mukta', sans-serif;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+/* ── Premium Card ── */
+.premium-card {
+  background: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  padding: 24px;
+  transition: background-color 0.4s ease,
+              border-color 0.4s ease,
+              transform 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.25s ease;
+  backdrop-filter: blur(16px);
+  position: relative;
+}
+
+.premium-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 16px 40px var(--glass-shadow);
+  border-color: rgba(14, 165, 233, 0.15);
+}
+
+.card-header {
+  font-size: 1.2rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+}
+
+/* ── Action Buttons Hub ── */
+.action-buttons-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.action-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 22px 16px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid var(--border-color);
+  font-family: 'Mukta', 'Inter', sans-serif;
+  text-align: center;
+}
+
+.action-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.action-btn .action-subtitle {
+  font-size: 0.8em;
+  opacity: 0.75;
+  font-weight: 400;
+  font-family: 'Mukta', sans-serif;
+}
+
+/* ── Booking Cards ── */
+.booking-card {
+  padding: 18px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.02);
+  border-left: 4px solid var(--primary-color);
+  position: relative;
+}
+.booking-card.warning {
+  border-left-color: var(--warning-color);
+}
+.booking-card.sos {
+  border-left-color: var(--danger-color);
+}
+
+/* ── Star Rating ── */
+.rating-badge {
+  background: rgba(245, 158, 11, 0.15);
+  color: var(--warning-color);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+/* ── Vitals Display ── */
+.vitals-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 8px;
+  background: var(--input-bg);
+  padding: 16px;
+  border-radius: 14px;
+  text-align: center;
+}
+.vitals-grid .vital-item span {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 4px;
+}
+.vitals-grid .vital-item strong {
+  font-size: 1.15rem;
+  color: var(--text-primary);
+}
+.vitals-divider {
+  border-left: 1px solid rgba(255,255,255,0.08);
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+
+/* ── Wellness Feed ── */
+.wellness-feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 18px;
+}
+
+.wellness-card {
+  padding: 22px;
+  border-radius: 18px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.wellness-card:hover {
+  transform: translateY(-2px);
+}
+.wellness-card.yojna {
+  background: linear-gradient(135deg,
+    rgba(16, 185, 129, 0.18) 0%,
+    rgba(16, 185, 129, 0.05) 100%);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+}
+.wellness-card.tip {
+  background: linear-gradient(135deg,
+    rgba(245, 158, 11, 0.18) 0%,
+    rgba(245, 158, 11, 0.05) 100%);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+.wellness-badge {
+  font-size: 0.72rem;
+  padding: 4px 12px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.wellness-card.yojna .wellness-badge { background: var(--success-color); color: white; }
+.wellness-card.tip .wellness-badge   { background: var(--warning-color); color: #1e293b; }
+
+/* ── SOS Banner ── */
+.sos-banner {
+  background: linear-gradient(135deg, rgba(239, 68, 68, 0.15), rgba(220, 38, 38, 0.08));
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  border-radius: 16px;
+  padding: 18px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+/* ── BMI Widget ── */
+.bmi-result {
+  padding: 14px;
+  border-radius: 12px;
+  text-align: center;
+  margin-top: 12px;
+}
+.bmi-normal  { background: rgba(16, 185, 129, 0.15); border: 1px solid rgba(16, 185, 129, 0.3); }
+.bmi-warning { background: rgba(245, 158, 11, 0.15); border: 1px solid rgba(245, 158, 11, 0.3); }
+.bmi-danger  { background: rgba(239, 68, 68, 0.15);  border: 1px solid rgba(239, 68, 68, 0.3); }
+
+/* ── Medicine Reminder Cards ── */
+.medicine-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px;
+  border-radius: 12px;
+  background: var(--input-bg);
+  border: 1px solid var(--border-color);
+}
+
+/* ── Responsive ── */
+@media (max-width: 1100px) {
+  .dashboard-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .patient-dashboard-container { padding: 16px; gap: 18px; }
+  .hero-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 24px 20px;
+  }
+  .hero-banner h1 { font-size: 1.5rem; }
+  .hero-actions { width: 100%; justify-content: flex-start; flex-wrap: wrap; }
+  .action-buttons-container { grid-template-columns: 1fr 1fr; }
+  .sos-banner { flex-direction: column; text-align: center; }
+}

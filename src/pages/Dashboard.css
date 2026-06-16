@@ -1,0 +1,163 @@
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page-header h1 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.stat-card {
+  padding: 24px;
+}
+
+.stat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 16px;
+}
+
+.stat-icon-wrapper {
+  background: rgba(14, 165, 233, 0.1);
+  padding: 12px;
+  border-radius: 12px;
+}
+
+.stat-icon {
+  color: var(--primary-color);
+}
+
+.stat-trend {
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 4px 8px;
+  border-radius: 20px;
+}
+
+.stat-trend.positive {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--success-color);
+}
+
+.stat-trend.negative {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--danger-color);
+}
+
+.stat-content h3 {
+  font-size: 2rem;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
+
+.stat-content p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.dashboard-content-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 20px;
+}
+
+.recent-activity, .upcoming-appointments {
+  padding: 24px;
+}
+
+.recent-activity h2, .upcoming-appointments h2 {
+  font-size: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.activity-list, .appointment-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.activity-item {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.activity-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.activity-dot {
+  width: 12px;
+  height: 12px;
+  background: var(--accent-color);
+  border-radius: 50%;
+  margin-top: 6px;
+  box-shadow: 0 0 10px var(--accent-color);
+}
+
+.activity-details h4 {
+  font-size: 1rem;
+  margin-bottom: 4px;
+}
+
+.activity-details p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+
+.activity-time {
+  font-size: 0.75rem;
+  color: var(--primary-color);
+}
+
+.appointment-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.patient-avatar {
+  background: rgba(14, 165, 233, 0.1);
+  color: var(--primary-color);
+  padding: 10px;
+  border-radius: 50%;
+}
+
+.appointment-details {
+  flex: 1;
+}
+
+.appointment-details h4 {
+  font-size: 0.95rem;
+}
+
+.appointment-details p {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.glass-button.small {
+  padding: 6px 12px;
+  font-size: 0.85rem;
+}

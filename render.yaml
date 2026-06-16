@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: lok-kalyan-backend
+    env: node
+    rootDir: server
+    buildCommand: npm install
+    startCommand: node server.js
+    healthCheckPath: /api/providers
+    envVars:
+      - key: NODE_VERSION
+        value: 18
